@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>A Web Page</title>
+	</head>
+	<body>
+		<h1>Random Word Attempt #{{ counter }} </h1>
+		<div id="random_box">
+			<h2>{{ string }}<h2>
+		</div>
+		<form method="post" action="{% url 'generate' %}">
+			{% csrf_token %}
+			<input type="submit" value="Generate"/>
+		</form>
+
+		<form method="post" action="{% url 'destroy' %}">
+			{% csrf_token %}
+			<input type="submit" value="Reset"/>
+		</form>
+
+	</body>
+</html>
